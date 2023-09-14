@@ -2,6 +2,7 @@ import React from 'react';
 import {MultiMarker, TMap} from '@map-component/react-tmap';
 import {FoodFacility} from "@/services/food-facility-data";
 import {NextPage} from "next";
+import PointGeometry = TMap.PointGeometry;
 
 const styles = {
     pushCartStyle: {
@@ -24,8 +25,8 @@ interface MapProps {
 
 const buildMarker = (foodFacilitys: Array<FoodFacility>) => foodFacilitys.map((foodFacility, index) => ({
     position: {
-        lat: foodFacility.Latitude,
-        lng: foodFacility.Longitude
+        lat: parseFloat(foodFacility.Latitude),
+        lng: parseFloat(foodFacility.Longitude),
     },
     id: foodFacility.locationid,
     styleId: foodFacility.FacilityType === 'Push Cart' ? 'pushCartStyle' : 'truckStyle',
@@ -33,7 +34,7 @@ const buildMarker = (foodFacilitys: Array<FoodFacility>) => foodFacilitys.map((f
     properties: {
         title: 'marker1',
     },
-}))
+})) as Array<PointGeometry<any>>
 
 const MyMap: NextPage<MapProps> = ({foodFacilities}) => {
     return (
