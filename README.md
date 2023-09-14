@@ -1,34 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+简单来看就是把数据展示到地图上，再做点筛选的功能
 
-## Getting Started
+#### 怎么使用数据
 
-First, run the development server:
+1. ~~把数据倒入到数据库中，再搞个接口读取（...又得写后端代码）~~
+2. 直接前端解析文件
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+#### 项目框架选择
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+~~1、Next.js+tRPC+prisma （...本地数据库要是部署到vercel上链接怎么办）~~
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2、Next.js（数据还是直接读取文件吧）
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### 地图API选择
 
-## Learn More
+1. ~~google maps api / google maps embed api embed（要钱，注册信用卡验证）~~
+2. ~~百度地图API（注册好麻烦，还得写为什么要使用，还得写50个字）~~
+3. 腾讯地图API（微信扫码注册）
 
-To learn more about Next.js, take a look at the following resources:
+..... 腾讯地图显示不了国外的，还卡，还有位置偏移
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
